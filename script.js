@@ -1,61 +1,67 @@
+// التحقق من دعم المتصفح لـ Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // تسجيل الـ Service Worker
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('تم تسجيل Service Worker بنجاح:', registration.scope);
+    }).catch(error => {
+      console.log('فشل تسجيل Service Worker:', error);
+    });
+  });
+}
+
 let timeout;
+
+// دالة الترجمة
 async function translateText() {
   const fromLanguage = document.getElementById('fromLanguage').value;
   const toLanguage = document.getElementById('toLanguage').value;
   let inputText = document.getElementById('inputText').value;
 
-  // إزالة الفواصل والنقاط من النص قبل الترجمة
+  // إزالة الفواصل والنقاط
   inputText = inputText.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "");
 
-  // التأكد من وجود نص للترجمة
   if (!inputText.trim()) {
-    document.getElementById('outputText').value = ''; // إفراغ الحقل في حالة عدم وجود نص
+    document.getElementById('outputText').value = '';
     return;
   }
 
-  // إلغاء الترجمة القديمة إذا تم الكتابة بعد فترة قصيرة
   clearTimeout(timeout);
 
-  // إضافة تأخير بعد توقف الكتابة قبل البدء في الترجمة
   timeout = setTimeout(async function() {
     try {
-      // إرسال الطلب إلى MyMemory API مع التأكد من ترميز النص بشكل صحيح
       const apiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=${fromLanguage}|${toLanguage}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
 
-      // فحص حالة الاستجابة والتأكد من وجود الترجمة الصحيحة
       if (data.responseStatus === 200 && data.responseData.translatedText) {
         document.getElementById('outputText').value = data.responseData.translatedText;
       } else {
-        // إذا كانت هناك مشكلة في الترجمة، إظهار رسالة مناسبة
         document.getElementById('outputText').value = "تعذر الترجمة. حاول مرة أخرى.";
       }
     } catch (error) {
       console.error('خطأ أثناء الترجمة:', error);
       document.getElementById('outputText').value = "حدث خطأ أثناء الترجمة. حاول مرة أخرى.";
     }
-  }, 1000); // تأخير لمدة 1 ثانية بعد توقف الكتابة (يمكنك زيادة أو تقليل الوقت حسب الحاجة)
+  }, 1000);
 }
 
-// إضافة الحدث للتغييرات في حقل النص المدخل
+// إضافة الحدث لتغييرات النص المدخل
 document.getElementById('inputText').addEventListener('input', translateText);
-
-// إضافة الحدث لتغيير لغات الترجمة
 document.getElementById('fromLanguage').addEventListener('change', translateText);
 document.getElementById('toLanguage').addEventListener('change', translateText);
 
-// وظيفة نطق النصوص باستخدام API
+// وظيفة نطق النص
 async function speakText(text, voiceName) {
-  const encodedText = encodeURIComponent(text); // ترميز النص
+  const encodedText = encodeURIComponent(text);
   const url = `https://api.streamelements.com/kappa/v2/speech?voice=${voiceName}&text=${encodedText}`;
 
   try {
     const response = await fetch(url);
-    const audioData = await response.blob(); // تحميل الصوت
-    const audioUrl = URL.createObjectURL(audioData); // إنشاء رابط صوتي
+    const audioData = await response.blob();
+    const audioUrl = URL.createObjectURL(audioData);
 
-    const audio = new Audio(audioUrl); // تشغيل الصوت
+    const audio = new Audio(audioUrl);
     audio.play();
   } catch (error) {
     console.error('خطأ أثناء نطق النص:', error);
@@ -63,10 +69,10 @@ async function speakText(text, voiceName) {
   }
 }
 
-// إضافة الأحداث عند الضغط على أزرار النطق
+// إضافة الأحداث للأزرار
 document.getElementById('speakInputText').addEventListener('click', function() {
   const inputText = document.getElementById('inputText').value;
-  const voiceName = document.getElementById('voiceSelect').value; // الحصول على الصوت المحدد
+  const voiceName = document.getElementById('voiceSelect').value;
   if (inputText.trim()) {
     speakText(inputText, voiceName);
   } else {
@@ -76,7 +82,7 @@ document.getElementById('speakInputText').addEventListener('click', function() {
 
 document.getElementById('speakOutputText').addEventListener('click', function() {
   const outputText = document.getElementById('outputText').value;
-  const voiceName = document.getElementById('voiceSelect').value; // الحصول على الصوت المحدد
+  const voiceName = document.getElementById('voiceSelect').value;
   if (outputText.trim()) {
     speakText(outputText, voiceName);
   } else {
