@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <!-- إضافة مكتبة Font Awesome للأيقونات -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#007bff">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&T</title>
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <div class="container">
@@ -153,5 +155,27 @@
     
   </div>
   <script src="script.js"></script>
+  <script>
+        document.getElementById('addShortcut').addEventListener('click', function() {
+            alert('إضافة اختصار متصفح قيد التنفيذ...');
+            // يمكنك إضافة الكود اللازم هنا لإضافة اختصار متصفح
+        });
+
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installApp').style.display = 'block';
+        });
+
+        document.getElementById('installApp').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`تم اختيار التثبيت: ${outcome}`);
+                deferredPrompt = null;
+            }
+        });
+              </script>
   </body>
 </html>
