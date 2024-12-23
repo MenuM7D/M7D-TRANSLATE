@@ -1,7 +1,7 @@
 "name": "m7d translate",
   "short_name": "M&T",
   "description": "مترجم احترافي متاح فيه الترجمة لمعظم لغات العالم",
-  "start_url": "https://m7-d-translate.vercel.app/",
+  "start_url": "https://m7-d-translate.vercel.app/?homescreen=1",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
