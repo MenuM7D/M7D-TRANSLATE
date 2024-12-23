@@ -1,16 +1,31 @@
 {
   "name": "m7d translate",
   "short_name": "M&T",
-  "description": "مترجم احترافي متاح فيه الترجمه لمعظم لغات العالم",
-  "start_url": "https://m7-d-translate.vercel.app",
+  "description": "مترجم احترافي متاح فيه الترجمة لمعظم لغات العالم",
+  "start_url": "https://m7-d-translate.vercel.app/?homescreen=1",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
+  "scope": "https://m7-d-translate.vercel.app/",
   "icons": [
     {
       "src": "https://i.ibb.co/NYvMKvd/copilot-image-1734968383115.jpg",
       "sizes": "192x192",
       "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/NYvMKvd/copilot-image-1734968383115.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/NYvMKvd/copilot-image-1734968383115.jpg",
+      "sizes": "256x256",
+      "type": "image/png"
     }
-  ]
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "orientation": "portrait",
+  "lang": "ar"
 }
