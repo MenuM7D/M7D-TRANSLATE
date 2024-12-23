@@ -2,7 +2,10 @@ let timeout;
 async function translateText() {
   const fromLanguage = document.getElementById('fromLanguage').value;
   const toLanguage = document.getElementById('toLanguage').value;
-  const inputText = document.getElementById('inputText').value;
+  let inputText = document.getElementById('inputText').value;
+
+  // إزالة الفواصل والنقاط من النص قبل الترجمة
+  inputText = inputText.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "");
 
   // التأكد من وجود نص للترجمة
   if (!inputText.trim()) {
