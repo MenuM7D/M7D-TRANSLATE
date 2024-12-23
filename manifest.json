@@ -42,7 +42,6 @@
     {
       "platform": "web",
       "url": "https://m7d-media-manager.vercel.app/",
-      "id": "com.example.app",
       "install_action": "install"
     },
     {
