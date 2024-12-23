@@ -4,7 +4,7 @@
   "description": "مترجم احترافي متاح فيه الترجمة لمعظم لغات العالم",
   "start_url": "https://m7-d-translate.vercel.app/?homescreen=1",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "linear-gradient(to right, #2196F3, #ffffff)"
   "theme_color": "#000000",
   "scope": "https://m7-d-translate.vercel.app/",
   "icons": [
