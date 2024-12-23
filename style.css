@@ -1,0 +1,144 @@
+/* تنسيق عام */
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: #ff7f50;
+}
+
+/* تنسيق للقوائم المنسدلة */
+.language-select {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.language-select select {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-left: 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+  width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.language-select select:hover {
+  border-color: #ff7f50;
+}
+
+/* إضافة أيقونات */
+.language-select i {
+  font-size: 1.5rem;
+  color: #ff7f50;
+}
+
+/* تحسين تنسيق النصوص */
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  font-size: 16px;
+}
+
+textarea#outputText {
+  background: #f8f8f8;
+  color: #555;
+}
+
+/* تصميم الزر */
+button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px; /* تحديد الحد الأقصى للعرض */
+  margin: 10px 0; /* مسافة بين الأزرار */
+  transition: background-color 0.3s ease;
+  text-align: center; /* محاذاة النص في الزر */
+}
+
+button:hover {
+  background-color: #ff5733;
+}
+
+/* تنسيق لرفع الصورة */
+#imageUpload {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px; /* تحديد الحد الأقصى للعرض */
+}
+
+/* تحسين تنسيق نتائج رفع الصورة */
+#imageTextResult {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* تنسيق الأزرار الخاصة بالنطق الصوتي */
+.speech-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 15px; /* المسافة بين الأزرار */
+}
+
+.speech-buttons button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 48%; /* تحديد العرض */
+  transition: background-color 0.3s ease;
+  text-align: center; /* محاذاة النص في الزر */
+}
+
+.speech-buttons button:hover {
+  background-color: #ff5733;
+}
+
+/* تنسيق الأيقونات داخل الأزرار */
+.speech-buttons i {
+  margin-left: 8px;
+}

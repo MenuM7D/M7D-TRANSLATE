@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>𝐌7𝐃 𝐓𝐑𝐀𝐍𝐒𝐋𝐀𝐓𝐄</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- إضافة مكتبة Font Awesome للأيقونات -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>𝐌7𝐃 𝐓𝐑𝐀𝐍𝐒𝐋𝐀𝐓𝐄</h1>
+<div class="language-select">
+      <i class="fas fa-language"></i>
+      <select id="fromLanguage">
+     <option value="ar">العربية</option>
+<option value="en">الانجليزيه</option>
+          <option value="fr">الفرنسية</option>
+          <option value="de">الألمانية</option>
+          <option value="es">الإسبانية</option>
+          <option value="it">الإيطالية</option>
+          <option value="pt">البرتغالية</option>
+          <option value="ru">الروسية</option>
+          <option value="zh">الصينية</option>
+          <option value="ja">اليابانية</option>
+          <option value="ko">الكورية</option>
+          <option value="hi">الهندية</option>
+          <option value="bn">البنغالية</option>
+          <option value="tl">التاغالوغية</option>
+          <option value="tr">التركية</option>
+          <option value="pl">البولندية</option>
+          <option value="cs">التشيكية</option>
+          <option value="sv">السويدية</option>
+          <option value="no">النرويجية</option>
+          <option value="da">الدنماركية</option>
+          <option value="fi">الفنلندية</option>
+          <option value="el">اليونانية</option>
+          <option value="th">التايلاندية</option>
+          <option value="he">العبرية</option>
+          <option value="id">الإندونيسية</option>
+          <option value="ms">الماليزية</option>
+          <option value="ro">الرومانية</option>
+          <option value="hu">الهنغارية</option>
+          <option value="sr">الصربية</option>
+          <option value="hr">الكرواتية</option>
+          <option value="sl">السلوفينية</option>
+          <option value="uk">الأوكرانية</option>
+          <option value="vi">الفيتنامية</option>
+          <option value="la">اللاتينية</option>
+          <option value="km">الخميرية</option>
+          <option value="mn">المنغولية</option>
+          <option value="sw">السواحيلية</option>
+        <!-- أضف المزيد حسب الحاجة -->
+      </select>
+    </div>
+    <textarea id="inputText" placeholder="ضع النص المراد ترجمته هنا"></textarea>
+<button id="speakInputText">نـطـق الـنـص الـمـدخـل</button>
+    <!-- تحديد اللغة من -->
+   
+   
+    <!-- تحديد اللغة إلى -->
+    <div class="language-select">
+      <i class="fas fa-language"></i>
+      <select id="toLanguage">
+        <option value="en">الإنجليزية</option>
+          <option value="ar">العربية</option>
+          <option value="fr">الفرنسية</option>
+          <option value="de">الألمانية</option>
+          <option value="es">الإسبانية</option>
+          <option value="it">الإيطالية</option>
+          <option value="pt">البرتغالية</option>
+          <option value="ru">الروسية</option>
+          <option value="zh">الصينية</option>
+          <option value="ja">اليابانية</option>
+          <option value="ko">الكورية</option>
+          <option value="hi">الهندية</option>
+          <option value="bn">البنغالية</option>
+          <option value="tl">التاغالوغية</option>
+          <option value="tr">التركية</option>
+          <option value="pl">البولندية</option>
+          <option value="cs">التشيكية</option>
+          <option value="sv">السويدية</option>
+          <option value="no">النرويجية</option>
+          <option value="da">الدنماركية</option>
+          <option value="fi">الفنلندية</option>
+          <option value="el">اليونانية</option>
+          <option value="th">التايلاندية</option>
+          <option value="he">العبرية</option>
+          <option value="id">الإندونيسية</option>
+          <option value="ms">الماليزية</option>
+          <option value="ro">الرومانية</option>
+          <option value="hu">الهنغارية</option>
+          <option value="sr">الصربية</option>
+          <option value="hr">الكرواتية</option>
+          <option value="sl">السلوفينية</option>
+          <option value="uk">الأوكرانية</option>
+          <option value="vi">الفيتنامية</option>
+          <option value="la">اللاتينية</option>
+          <option value="km">الخميرية</option>
+          <option value="mn">المنغولية</option>
+          <option value="sw">السواحيلية</option>
+        <!-- أضف المزيد حسب الحاجة -->
+      </select>
+    </div>
+
+    <textarea id="outputText" readonly placeholder=""></textarea>
+
+    <button id="speakOutputText">نـطـق الـنـص الـمتـرجـم</button>
+
+    <!-- إضافة اختيار الصوت للنطق -->
+    <div class="language-select">
+      <i class="fas fa-volume-up"></i>
+      <select id="voiceSelect">
+        <option value="en-US-Standard-B">الإنجليزية (US)</option>
+        <option value="pt-BR-Standard-A">البرتغالية (Brazil)</option>
+        <option value="ko-KR-Standard-A">الكورية</option>
+        <option value="ja-JP-Standard-A">اليابانية</option>
+        <option value="it-IT-Standard-A">الإيطالية</option>
+        <option value="es-ES-Standard-A">الإسبانية</option>
+        <option value="ru-RU-Wavenet-A">الروسية</option>
+        <option value="fr-CA-Standard-A">الفرنسية (كندا)</option>
+        <option value="de-DE-Standard-A">الألمانية</option>
+        <option value="nl-NL-Standard-A">الهولندية</option>
+        <option value="sv-SE-Standard-A">السويدية</option>
+        <option value="pl-PL-Wavenet-D">البولندية</option>
+        <option value="sk-SK-Wavenet-A">السلوفاكية</option>
+        <option value="tr-TR-Wavenet-A">التركية</option>
+        <option value="uk-UA-Wavenet-A">الأوكرانية</option>
+        <option value="ar-XA-Wavenet-A">العربية</option>
+        <option value="cs-CZ-Wavenet-A">التشيكية</option>
+        <option value="fil-PH-Wavenet-A">الفلبينية</option>
+        <option value="fi-FI-Wavenet-A">الفنلندية</option>
+        <option value="el-GR-Wavenet-A">اليونانية</option>
+        <option value="hi-IN-Wavenet-A">الهندية</option>
+        <option value="hu-HU-Wavenet-A">الهنغارية</option>
+        <option value="id-ID-Wavenet-A">الإندونيسية</option>
+        <option value="it-IT-Wavenet-B">الإيطالية (Wavenet)</option>
+        <option value="ja-JP-Wavenet-B">اليابانية (Wavenet)</option>
+        <option value="sr-rs-Standard-A">الصربية</option>
+        <option value="vi-VN-Wavenet-A">الفيتنامية</option>
+        <option value="nb-no-Wavenet-E">النرويجية</option>
+        <option value="cmn-CN-Wavenet-A">الصينية (ماندارين)</option>
+        <option value="af-ZA-Standard-A">الأفريكانية</option>
+        <option value="bg-bg-Standard-A">البلغارية</option>
+        <option value="is-is-Standard-A">الأيسلندية</option>
+        <option value="lv-lv-Standard-A">اللاتفية</option>
+      </select>
+    </div>
+
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
