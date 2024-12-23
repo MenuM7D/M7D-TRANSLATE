@@ -1,7 +1,7 @@
 {
   "name": "media boss",
   "short_name": "M&B",
-  "description": "قم بتنزيل الفيديوهات من منصات التواصل الاجتماعي بسهولة وبدون علامة مائية وبأعلي جوده ممكنه",
+  "description": "قم بتنزيل الفيديوهات من منصات التواصل الاجتماعي بسهولة وبدون علامة مائية وبأعلى جودة ممكنة",
   "start_url": "https://m7d-media-manager.vercel.app/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -37,5 +37,19 @@
       "sizes": "48x48",
       "type": "image/png"
     }
-  ]
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://m7d-media-manager.vercel.app/",
+      "id": "com.example.app",
+      "install_action": "install"
+    },
+    {
+      "platform": "browser",
+      "url": "https://m7d-media-manager.vercel.app/",
+      "install_action": "shortcut"
+    }
+  ],
+  "prefer_related_applications": true
 }
